@@ -1,4 +1,4 @@
-# ServerlessApplication1
+# ServerlessApplication
  
 Documentação com imagens: https://docs.google.com/document/d/1O0jsUPNvpqVCBmmY62LOGuF8q0iXDGmshwX85PV09aw/edit?usp=sharing
 
