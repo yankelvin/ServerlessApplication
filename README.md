@@ -68,3 +68,19 @@ Com o docker instalado, utilizaremos os seguintes comandos
 **docker run --name teste-pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=admin@teste" -e "PGADMIN_DEFAULT_PASSWORD=admin123" -d dpage/pgadmin4**
 
 Quando as duas instâncias estão subindo as mesmas estão apontando pro mesmo network, dessa forma conseguimos manter a conexão.
+
+# Monitoração - Portainer
+
+1 - Baixar a instância do portainer
+**docker pull portainer/portainer**
+
+2 - Subir a instância
+**docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /home/renatogroffe/Desenvolvimento/Portainer/data:/data portainer/portainer**
+
+3 - Após subir basta acessar a porta 9000 que estará rodando
+
+4 - No primeira vez será pedido para que se adicione a senha de administrador, após isso só precisa reutilizar o login e senha
+
+5 - Após fazer login selecionar a opção "Local"
+
+6 - Nisso já estará utilizando o serviço de monitoração
