@@ -52,19 +52,19 @@ Para ver a monitoração basta ir na aba “Monitoramento” dentro do Lambda:
 
 Com o docker instalado, utilizaremos os seguintes comandos
 
-1 - Baixar a instância do posgres
-docker pull postgres
+1 - Baixar a instância do posgres  
+**docker pull postgres**
 
-2 - Baixar a instância do painel de administração do postgres
-docker pull dpage/pgadmin4
+2 - Baixar a instância do painel de administração do postgres  
+**docker pull dpage/pgadmin4**
 
-3 - Criar uma ponte para que os dois containers possam se comunicar
-docker network create --driver bridge postgres-network
+3 - Criar uma ponte para que os dois containers possam se comunicar  
+**docker network create --driver bridge postgres-network**
 
-4 - Subir o instância do banco
-docker run --name teste-postgres --network=postgres-network -e "POSTGRES_PASSWORD=admin123" -p 5432:5432 -v D:\DataBase -d postgres
+4 - Subir o instância do banco  
+**docker run --name teste-postgres --network=postgres-network -e "POSTGRES_PASSWORD=admin123" -p 5432:5432 -v D:\DataBase -d postgres**
 
-5 - Subir a instância do painel administrativo do postgres
-docker run --name teste-pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=admin@teste" -e "PGADMIN_DEFAULT_PASSWORD=admin123" -d dpage/pgadmin4
+5 - Subir a instância do painel administrativo do postgres  
+**docker run --name teste-pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=admin@teste" -e "PGADMIN_DEFAULT_PASSWORD=admin123" -d dpage/pgadmin4**
 
 Quando as duas instâncias estão subindo as mesmas estão apontando pro mesmo network, dessa forma conseguimos manter a conexão.
